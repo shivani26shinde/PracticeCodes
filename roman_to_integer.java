@@ -2,89 +2,73 @@
 
 public class Solution {
 	public int romanToInt(String a) {
-	    int val = 0;
-	    
-	    int len = a.length();
-	    for(int i=len-1; i>=0; i--){
-	        if(a.charAt(i) == 'V'){
-	            if(a.charAt(i-1) != 'I' || a.charAt(i-1) != 'X' || a.charAt(i-1) != 'C'){
-	               val = val+5; 
-	            }
-	        }
-	        else if(a.charAt(i) == 'X'){
-	            if(a.charAt(i-1) != 'I' || a.charAt(i-1) != 'X' || a.charAt(i-1) != 'C'){
-	               val = val+10; 
-	            }
-	        }
-	        else if(a.charAt(i) == 'L'){
-	            if(a.charAt(i-1) != 'I' || a.charAt(i-1) != 'X' || a.charAt(i-1) != 'C'){
-	               val = val+50; 
-	            }
-	        }
-	        else if(a.charAt(i) == 'C'){
-	            if(a.charAt(i-1) != 'I' || a.charAt(i-1) != 'X' || a.charAt(i-1) != 'C'){
-	               val = val+100; 
-	            }
-	        }
-	        else if(a.charAt(i) == 'D'){
-	            if(a.charAt(i-1) != 'I' || a.charAt(i-1) != 'X' || a.charAt(i-1) != 'C'){
-	               val = val+500; 
-	            }
-	        }
-	        else if(a.charAt(i) == 'M'){
-	            if(a.charAt(i-1) != 'I' || a.charAt(i-1) != 'X' || a.charAt(i-1) != 'C'){
-	               val = val+1000; 
-	            }
-	        }
-	        else if(a.charAt(i) == 'I'){
-	            int count = 1;
-	            while(a.charAt(i) == a.charAt(i-1)){
-	                count++;
-	                i--;
-	            }
-	            if(a.charAt(i+1) == 'V' || a.charAt(i+1) == 'X' || a.charAt(i+1) == 'L' || a.charAt(i+1) == 'C' || a.charAt(i+1) == 'D' || 
-	            a.charAt(i+1) == 'M'){
-	               val = val-count*1; 
-	            }
-	            else if(a.charAt(i-1) == 'V' || a.charAt(i-1) == 'X' || a.charAt(i-1) == 'L' || a.charAt(i-1) == 'C' || a.charAt(i-1) == 'D' || 
-	            a.charAt(i-1) == 'M'){
-	               val = val+count*1; 
-	            }
-	        }
-	        else if(a.charAt(i) == 'X'){
-	            int count = 1;
-	            while(a.charAt(i) == a.charAt(i-1)){
-	                count++;
-	                i--;
-	            }
-	            if(a.charAt(i+1) == 'V' || a.charAt(i+1) == 'X' || a.charAt(i+1) == 'L' || a.charAt(i+1) == 'C' || a.charAt(i+1) == 'D' || 
-	            a.charAt(i+1) == 'M'){
-	               val = val-count*10; 
-	            }
-	            else if(a.charAt(i-1) == 'V' || a.charAt(i-1) == 'X' || a.charAt(i-1) == 'L' || a.charAt(i-1) == 'C' || a.charAt(i-1) == 'D' || 
-	            a.charAt(i-1) == 'M'){
-	               val = val+count*10; 
-	            }
-	        }
-	        else if(a.charAt(i) == 'C'){
-	            int count = 1;
-	            while(a.charAt(i) == a.charAt(i-1)){
-	                count++;
-	                i--;
-	            }
-	            if(a.charAt(i+1) == 'V' || a.charAt(i+1) == 'X' || a.charAt(i+1) == 'L' || a.charAt(i+1) == 'C' || a.charAt(i+1) == 'D' || 
-	            a.charAt(i+1) == 'M'){
-	               val = val-count*100; 
-	            }
-	            else if(a.charAt(i-1) == 'V' || a.charAt(i-1) == 'X' || a.charAt(i-1) == 'L' || a.charAt(i-1) == 'C' || a.charAt(i-1) == 'D' || 
-	            a.charAt(i-1) == 'M'){
-	               val = val+count*100; 
-	            }
-	        }
-	        else{
-	            return 0;
-	        }
+		
+		# string is empty
+		if(a.length() == 0){
+			return 0;
+		} 
+
+		# set two pointers
+		int present = 0;
+		int previous = 0;
+		int val = a.length()-1;
+		
+		# Loop till the start of the string
+		while(val>=0){
+			
+			# get the character value
+			int num = value(a.charAt(val));
+			
+			# Add the value of the last character
+			if(val == a.length()-1){
+				present = present+num; 
+			}
+			
+			# Check the character value with the rightmost character value
+			else{
+				
+				# if less then subtract
+				if(num < previous){
+					 present = present-num; 
+				}
+				# if more than add
+				else{
+					  present = present+num; 
+					}
+				}
+				
+				# update the pointer for later comparison
+				previous = num;
+				val--;
+			}
+		return present;
+	}
+	
+	# Set values to every character
+	public int value(Character c){
+	    if(c == 'I'){
+	       return 1; 
 	    }
-	    return val;
+	    else if(c == 'X'){
+	        return 10; 
+	    }
+	    else if(c == 'V'){
+	        return 5;
+	    }
+	    else if(c == 'C'){
+	        return 100;
+	    }
+	    else if(c == 'D'){
+	        return 500;
+	    }
+	    else if(c == 'L'){
+	        return 50;
+	    }
+	    else if(c == 'M'){
+	        return 1000;
+	    }
+	    else{
+	        return 0;
+	    }
 	}
 }
