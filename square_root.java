@@ -1,43 +1,27 @@
-# Square root of an integer
+# Square root of a number
 
 public class Solution {
 	public int sqrt(int a) {
-	    int ans = 0;
-		
+	
 		# number is 1
-	    if(a == 1){
-	        return 1;
-	    }
+		if(a == 1){
+			return 1;
+		}
 		
 		# number is 0
-	    if(a == 0){
-	        return 0;
-	    }
+		if(a == 0){
+			return 0;
+		}
 		
-	    int begin = 0;
-	    int end = a;
-		
+		double begin = 0;
+		double end = 1+(a/2);
+
 		# Binary serach to check the square root
-	    while(begin <= end){
-	        int mid = (end+begin)/2;
-			
-			# shifting the begin pointer
-	        if(mid*mid < a){
-	            begin = mid+1;
-	            ans = mid;
-	        }
-			
-			# shifting the end pointer
-	        else if(mid*mid > a){
-	            end = mid-1;
-	        }
-			
-			# square root found
-	        else if(mid*mid == a){
-	            return mid;
-	        }
-	    }
-        return ans;	    
+		while(end-begin != 0){
+			begin = end;
+			end = (1/2.0)*(begin + a/begin);
+		}
+		return (int) end;
 	}
 }
 
