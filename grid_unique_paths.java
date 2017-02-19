@@ -1,4 +1,4 @@
-// Grid Unique Paths
+# Grid Unique Paths
 
 public class Solution {
 	public int uniquePaths(int a, int b) {
