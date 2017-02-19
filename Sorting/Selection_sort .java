@@ -23,10 +23,7 @@ class Ideone
 			int temp = arr[i];
 			int val = i;
 			for(int j=i;j<n;j++){
-				if(temp < arr[j]){
-					j++;
-				}
-				else{
+				if(temp >= arr[j]){
 					temp = arr[j];
 					val = j;
 				}
