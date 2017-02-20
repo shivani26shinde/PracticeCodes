@@ -1,5 +1,6 @@
 # Merge Sort
-
+# Worse-case complexity: O(nlogn)
+	
 import java.util.*;
 import java.lang.*;
 import java.io.*;
