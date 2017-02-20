@@ -3,21 +3,21 @@
 public class Solution {
 	public String intToRoman(int a) {
 	
-		# returns null if requirement fails
+	//returns null if requirement fails
 	    if(a <= 0 || a > 3999){
 	        return null;
 	    }
 	    StringBuilder sb = new StringBuilder();
 		
-		# predefined array
+	//predefined array
 	    int values[] = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
 	    int len = 0;
 		
-		# iterate till the end of the array
+	//iterate till the end of the array
 	    while(len < values.length){
 	        int val = a/values[len];
 			
-			# append same character till the condition fails
+	//append same character till the condition fails
             while(val != 0){
                 sb.append(strings(values[len]));
                 a = a%values[len];
@@ -28,7 +28,7 @@ public class Solution {
 	    return sb.toString();
 	    
 	}
-	# Function that returns charaters for a number
+//Function that returns charaters for a number
 	public String strings(int a){
 	    if(a == 1){
 	       return "I";
