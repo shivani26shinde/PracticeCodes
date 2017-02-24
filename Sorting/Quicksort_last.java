@@ -1,4 +1,6 @@
 # Quicksort (Last element is always the pivot)
+Average-case complexity: O(nlogn)
+Worse-case complexity: O(n^2)
 
 class Ideone
 {

@@ -1,4 +1,4 @@
-# Quicksort (First element is always the pivot)
+# Quicksort (Center element is always the pivot)
 Average-case complexity: O(nlogn)
 Worse-case complexity: O(n^2)
 
@@ -27,19 +27,20 @@ class Ideone
 		}
 	}
 	public static int Divide(int arr[], int first, int last){
-		int pivot = arr[first];
-		int temp = last+1;
-		for(int i=last;i>first;i--){
-			if(pivot <= arr[i]){
-				temp--;
-				int val = arr[temp];
-				arr[temp] = arr[i];
+		int mid = (first+last)/2;
+		int pivot = arr[mid];
+		int temp1 = first-1;
+		for(int i=first;i<=last;i++){
+			if( pivot > arr[i]){
+				temp1++;
+				int val = arr[temp1];
+				arr[temp1] = arr[i];
 				arr[i] = val;
 			}
 		}
-		int val = arr[temp-1];
-		arr[temp-1] = arr[first];
-		arr[first] = val;
-		return temp-1;
+		int val1 = arr[temp1+1];
+		arr[temp1+1] = pivot;
+		pivot = val1;
+		return temp1+1;
 	}
 }
