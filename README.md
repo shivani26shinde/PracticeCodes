@@ -10,5 +10,4 @@ a. Whitespace in the string are removed
 b. Empty string
 c. Positive or negative sign appended at the start of the string
 d. Constraint on maximum and minimum value
-
-Using mathematical logic, calculated the integer value of the string.
+Finally, using mathematical logic, calculated the integer value of the string.
