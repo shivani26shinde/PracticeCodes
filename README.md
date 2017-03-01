@@ -5,9 +5,11 @@ In the field of Computer Science, there are infinite problems and these problems
 Program 1: Atoi
 
 In this program, I have converted the string into an integer.
+
 I have considered the following corner cases:
 a. Whitespace in the string are removed
 b. Empty string
 c. Positive or negative sign appended at the start of the string
 d. Constraint on maximum and minimum value
-Finally, using mathematical logic, calculated the integer value of the string.
+
+Using mathematical logic, calculated the integer value of the string.
