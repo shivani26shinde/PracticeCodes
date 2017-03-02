@@ -17,3 +17,9 @@ c. Positive or negative sign appended at the start of the string
 d. Constraint on maximum and minimum value
 
 Using mathematical logic, calculated the integer value of the string.
+
+Program 2: Count and Say
+
+Program 3 : Evaluate a given expression
+
+In this program, I have used a stack, in which I will keep inserting all the numbers from a given string until it reaches an operator and once the operator is found, I will take out the last two elements and perform the required operation using the two numbers and the operator. This will continue, till the final value is pushed into the stack and then, popped from the stack.
