@@ -2,18 +2,18 @@
 
 public class Solution {
 	public boolean isPalindrome(int a) {
-		# less than 0 
+	// Less than 0 
 	    if(a < 0){
 	        return false;
 	    }
-		# single digit number
+	// Single digit number
 	    if(a >=0 && a <= 9){
 	        return true;
 	    }
 	    int val = a;
 	    int ans = 0;
 		
-		# reverse the integer
+	// Reverse the integer
 	    while(a != 0){
 	        ans = ans*10 + a%10;
 	        a = a/10;
