@@ -14,7 +14,7 @@ class Solution {
            st.push(x);
        }
        else if(x < min){
-           st.push(2*x - min);
+           st.push(x - min);
            min = x;
        }
        else{
@@ -29,7 +29,7 @@ class Solution {
         }
         int temp = st.pop();
         if(temp < min){
-            min = 2*min - temp;
+            min = min - temp;
         }
         return;
     }
