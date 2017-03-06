@@ -3,11 +3,11 @@
 public class Solution {
 	public int searchMatrix(ArrayList<ArrayList<Integer>> a, int b) {
 	
-	# Size of the matrix
+	// Size of the matrix
 	    int m = a.size();
 	    int n = a.get(0).size();
 		
-	# Single element in the matrix
+	// Single element in the matrix
 	    if(m==1 & n==1){
 	        if(a.get(0).get(0) == b){
 	            return 1;
@@ -17,15 +17,15 @@ public class Solution {
 	        }
 	    }
 		
-	# Iterate over the matrix
+	// Iterate over the matrix
 	    for(int i = 0; i < m; i++){
 	    	for(int j = 0; j < n; j++){
 			
-			# Element not present in the current row
+			// Element not present in the current row
 	    		if(a.get(i).get(n-1) < b){
 	    			break;
 	    		}
-			# Binary search, 1 row
+			// Binary search, 1 row
 	    		else{
 	    			int ans = 0;
 	    			while(j<=(n-1)){
@@ -50,7 +50,7 @@ public class Solution {
 	    			}
 	    		}
 	    	}
-		# Element not present in the matrix
+	// Element not present in the matrix
 	    return 0;
 	}
 }
