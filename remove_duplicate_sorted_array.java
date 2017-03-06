@@ -14,16 +14,15 @@ public class Solution {
 	            return a.size();
 	        }
 	    }
-	    for(int i = 0; i < a.size()-1; i++){
-	        int j = i+1;
-	        while(i < j && j < a.size() && a.get(i) != a.get(j)){
-	            i++;
-	            j++;
-	        }
-	        while(i < j && j < a.size() && a.get(i) == a.get(j)){
-	            a.remove(j);
+	    int index = 1;
+	    int n = a.size();
+	    for (int i = 1; i < n; i++) {
+	        if (a.get(i).intValue() != a.get(i - 1).intValue()) {
+	            int temp = a.get(index);
+	            a.set(index, a.get(i));
+	            index++;
 	        }
 	    }
-	    return a.size();
+	    return index;
 	}
 }
