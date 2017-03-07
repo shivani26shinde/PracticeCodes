@@ -11,17 +11,17 @@ public class Solution {
 		// Keep iterating till the end of the lists
 	    while(i <= a.size()-1 && j <= b.size()-1){
 		
-			// list 1 has smaller element so, increment its pointer
+			// List 1 has smaller element so, increment its pointer
             if(a.get(i) < b.get(j)){
                 i++;
             }
 			
-			// list 2 has smaller element so, increment its pointer
+			// List 2 has smaller element so, increment its pointer
             else if(a.get(i) > b.get(j)){
                 j++;
             }
 			
-			// elements match, add to the list
+			// Elements match, add to the list
             else{
                 list.add(b.get(j));
                 j++;
@@ -29,7 +29,7 @@ public class Solution {
             }
 	    }
 		
-		// return list
+		// Return list
 	    return list;
 	}
 }
