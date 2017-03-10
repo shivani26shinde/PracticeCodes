@@ -3,48 +3,48 @@
 public class Solution {
 	public int romanToInt(String a) {
 		
-		# string is empty
+		// string is empty
 		if(a.length() == 0){
 			return 0;
 		} 
 
-		# set two pointers
+		// set two pointers
 		int present = 0;
 		int previous = 0;
 		int val = a.length()-1;
 		
-		# Loop till the start of the string
+		// Loop till the start of the string
 		while(val>=0){
 			
-			# get the character value
+			// get the character value
 			int num = value(a.charAt(val));
 			
-			# Add the value of the last character
+			// Add the value of the last character
 			if(val == a.length()-1){
 				present = present+num; 
 			}
 			
-			# Check the character value with the rightmost character value
+			// Check the character value with the rightmost character value
 			else{
 				
-				# if less then subtract
+				// if less then subtract
 				if(num < previous){
 					 present = present-num; 
 				}
-				# if more than add
+				// if more than add
 				else{
 					  present = present+num; 
 					}
 				}
 				
-				# update the pointer for later comparison
+				// update the pointer for later comparison
 				previous = num;
 				val--;
 			}
 		return present;
 	}
 	
-	# Set values to every character
+	// Set values to every character
 	public int value(Character c){
 	    if(c == 'I'){
 	       return 1; 
