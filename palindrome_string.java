@@ -4,13 +4,13 @@ public class Solution {
 
 	public int isPalindrome(String a) {
 	
-		# replacing the string to lowercase
+	// replacing the string to lowercase
 	    String s = a.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();;
 	    int n = s.length();    
 	    int start =0;
 	    int end = n - 1;
 		
-		# run the loop till it reaches half the length of the string
+	// run the loop till it reaches half the length of the string
 	    while(start < end)
 	    {	
 			# two characters don't match, its not a palindrome string
@@ -27,7 +27,7 @@ public class Solution {
 	        }
 	    }
 		
-		# string is a palindrome
+	// string is a palindrome
 	    return 1;
 	}
 }
