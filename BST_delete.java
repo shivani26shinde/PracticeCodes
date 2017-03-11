@@ -165,11 +165,11 @@ class BST
 			}
 			else{
 			
-				/ Node to be deleted and replaced is on the right side of the parent
+				// Node to be deleted and replaced is on the right side of the parent
 				if(rightpresent == 1){
 					parent.right = replace;
 				}
-				/ Node to be deleted and replaced is on the left side of the parent
+				// Node to be deleted and replaced is on the left side of the parent
 				else{
 					parent.left = replace;
 				}
