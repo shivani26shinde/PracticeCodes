@@ -23,3 +23,7 @@ Program 2: Count and Say
 Program 3 : Evaluate a given expression
 
 In this program, I have used a stack, in which I will keep inserting all the numbers from a given string until it reaches an operator and once the operator is found, I will take out the last two elements and perform the required operation using the two numbers and the operator. This will continue, till the final value is pushed into the stack and then, popped from the stack.
+
+Program 4: Grid Paths
+
+In this program, I have used recursion, inorder to find the total number of unique paths between the first grid and the last grid.
