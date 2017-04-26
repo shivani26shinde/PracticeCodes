@@ -56,8 +56,7 @@ class Ideone
 		if(table[row][col] == 0){
 			return 0;
 		}
-		size += getSize(table, row, col+1, arr) & getSize(table, row+1, col, arr) & getSize(table, row+1, col+1, arr);
-		arr[0] = size;
-		return size;
+		arr[0] += getSize(table, row, col+1, arr) & getSize(table, row+1, col, arr) & getSize(table, row+1, col+1, arr);
+		return arr[0];
 	}
 }
