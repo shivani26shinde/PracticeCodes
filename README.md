@@ -27,3 +27,7 @@ In this program, I have used a stack, in which I will keep inserting all the num
 Program 4: Grid Paths
 
 In this program, I have used recursion, inorder to find the total number of unique paths between the first grid and the last grid.
+
+Program 5: Maximum block of ones
+
+In a given matrix of one's and zero's, find the maximum size of a block (square block) containing one's.
