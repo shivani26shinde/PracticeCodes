@@ -33,3 +33,5 @@ In this program, I have used recursion, inorder to find the total number of uniq
 Program 5: Maximum block of ones
 
 In a given matrix of one's and zero's, find the maximum size of a block (square block) containing one's.
+
+Program 6: Rain water stack
