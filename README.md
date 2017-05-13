@@ -35,3 +35,5 @@ Program 5: Maximum block of ones
 In a given matrix of one's and zero's, find the maximum size of a block (square block) containing one's.
 
 Program 6: Rain water stack
+
+Program 7: Common Prefix
