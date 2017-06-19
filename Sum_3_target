@@ -1,0 +1,27 @@
+# Unique 3 numbers that sum up to a target value
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Ideone
+{
+	static ArrayList<Integer> list = new ArrayList<Integer>(Arrays.asList(1,3,5,1,5,2,7,8,3,7,2,8,1,1));
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Set<Integer> set = new HashSet<>(list);
+		list = new ArrayList<>(set);
+		Function(0, 8, new ArrayList(),list);
+	}
+	public static void Function(int start, int target, ArrayList<Integer> temp, ArrayList<Integer> list){
+		if(temp.size() == 3 && target == 0){
+			System.out.println(Arrays.toString(temp.toArray()));
+			return;
+		}
+		for(int i=start;i<list.size();i++){
+			temp.add(list.get(i));
+			Function(i+1, target-list.get(i), temp, list);
+			temp.remove(temp.size()-1);
+		}
+	}
+}
