@@ -28,9 +28,16 @@ class Ideone
 		}
 		ArrayList<Integer> minVal = new ArrayList<>();
 		for(int i=0;i<list.size();i++){
-			int s = start.get(list.get(i));
-			int e = end.get(list.get(i));
-			minVal.add(e-s);
+			if(start.containsKey(list.get(i))){
+				int s = start.get(list.get(i));
+				if(end.containsKey(list.get(i))){
+					int e = end.get(list.get(i));
+					minVal.add(e-s+1);
+				}
+				else{
+					minVal.add(1);
+				}
+			}
 		}
 		System.out.println(Collections.min(minVal));
 	}
