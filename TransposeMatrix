@@ -1,0 +1,13 @@
+class Solution {
+    public int[][] transpose(int[][] A) {
+        int[][] aRet = new int[A[0].length][A.length];
+        for(int i=0;i<A[0].length;i++){
+            int[] arr = new int[A.length];
+            for(int j=0;j<A.length;j++){
+                arr[j] = A[j][i];
+            }
+            aRet[i] = arr;
+        }
+        return aRet;
+    }
+}
