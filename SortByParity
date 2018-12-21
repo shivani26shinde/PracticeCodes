@@ -1,0 +1,28 @@
+class Solution {
+    public int[] sortArrayByParity(int[] A) {
+        if(A.length <= 1){
+            return A;
+        }
+        int[] finalAns = new int[A.length];
+        ArrayList<Integer> array1 = new ArrayList<>();
+        ArrayList<Integer> array2 = new ArrayList<>();
+        for(int i=0;i<A.length;i++){
+            if(A[i]%2 == 0){
+                array1.add(A[i]);
+            }
+            else{
+                array2.add(A[i]);
+            }
+        }
+        int start=0;
+        for(int i=0;i<array1.size();i++){
+            finalAns[start] = array1.get(i);
+            start++;
+        }
+        for(int i=0;i<array2.size();i++){
+            finalAns[start] = array2.get(i);
+            start++;
+        }
+        return finalAns;
+    }
+}
