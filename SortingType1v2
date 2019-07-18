@@ -1,0 +1,26 @@
+class SortType1
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		int[] array = new int[]{42,3,1,44,3,2,2,-4,6,2};
+		for(int i=0;i<array.length-1;i++){
+			int min = i;
+			for(int j=i+1;j<array.length;j++){
+				min = getMin(min, j, array);
+			}
+			swap(i, min, array);
+		}
+		System.out.println(Arrays.toString(array));
+	}
+	public static int getMin(int i, int j, int[] array){
+		if(array[i] < array[j]){
+			return i;
+		}
+		return j;
+	}
+	public static void swap(int i, int j, int[] array){
+		int temp = array[i];
+		array[i] = array[j];
+		array[j] = temp;
+	}
+}
