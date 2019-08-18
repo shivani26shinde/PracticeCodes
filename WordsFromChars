@@ -1,0 +1,38 @@
+class Solution {
+    public int countCharacters(String[] words, String chars) {
+        Map<Character, Integer> map = new HashMap<Character, Integer>();
+        int count = 0;
+        Map<Character, Integer> tempMap;
+        for(int i=0;i<chars.length();i++){
+            char c = chars.charAt(i);
+            if(map.containsKey(c)){
+                map.put(c, (map.get(c) + 1));
+            } else {
+                map.put(c, 1);
+            }          
+        }
+        for(int i=0;i<words.length;i++){
+            String word = words[i];
+            boolean isGood = true;
+            tempMap = new HashMap<Character, Integer>(map);
+            for(int j=0;j<word.length();j++){
+                char c = word.charAt(j);
+                if(tempMap.containsKey(c)){
+                    int num = tempMap.get(c);
+                    num = num - 1;
+                    tempMap.put(c, num);
+                    if(num == 0){
+                        tempMap.remove(c);
+                    }
+                } else{
+                    isGood = false;
+                    break;
+                }
+            }
+            if(isGood == true){
+                count = count + word.length();
+            }
+        }
+        return count;
+    }
+}
