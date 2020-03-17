@@ -32,4 +32,17 @@ public void practice() {
 	.sorted(Collections.reverseOrder())
 	.findFirst()
 	.ifPresent(System.out::print);
+	
+	// Squares of even numbers 
+	IntStream
+	.range(1,10)
+	.filter(x -> x%2==0)
+	.map(x -> x*x)
+	.forEach(System.out::println);
+	
+	// Average of numbers in array
+	Arrays.stream(new int[]{1,2,3,4,5})
+	.map(x -> x*x)
+	.average()
+	.ifPresent(System.out::println);
 }
