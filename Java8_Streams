@@ -45,4 +45,12 @@ public void practice() {
 	.map(x -> x*x)
 	.average()
 	.ifPresent(System.out::println);
+	
+	// Stream list
+	List<String> lst = Arrays.asList("washington","area","Boston","Arizona","Newyork","chicago");
+		lst
+		.stream()
+		.filter(x -> x.startsWith("a") || x.startsWith("A"))
+		.map(String::toLowerCase)
+		.forEach(System.out::println);
 }
