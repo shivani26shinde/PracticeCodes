@@ -1,0 +1,12 @@
+// Print numbers 1-10
+public void print() {
+		IntStream
+		.range(1,10)
+		.forEach(x -> System.out.print(x));
+    
+    // OR
+    
+    IntStream
+		.range(1,10)
+		.forEach(System.out::print);
+}
