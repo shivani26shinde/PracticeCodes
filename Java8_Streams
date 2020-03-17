@@ -1,12 +1,22 @@
-// Print numbers 1-10
-public void print() {
-		IntStream
-		.range(1,10)
-		.forEach(x -> System.out.print(x));
-    
-    // OR
-    
-    IntStream
-		.range(1,10)
-		.forEach(System.out::print);
+public void practice() {
+	// Print numbers 1-10
+	IntStream
+	.range(1,10)
+	.forEach(x -> System.out.print(x));
+	// OR --->
+	IntStream
+	.range(1,10)
+	.forEach(System.out::print);
+	
+	// Skip numbers upto given number inclusive
+	IntStream
+	.range(1,10)
+	.skip(5)
+	.forEach(x -> System.out.print(x));
+	
+	// Sum of numbers
+	int sum = IntStream
+	.range(1,10)
+	.sum();
+	System.out.println(sum);
 }
