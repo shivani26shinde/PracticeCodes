@@ -64,6 +64,16 @@ public void practice() {
 		.filter(x -> x.length==4)
 		.count();
 	System.out.println(count);
+	
+	// Sum using reduce
+	double sum = Stream.of(1.2,3.2,4.7,2.9)
+		.reduce(0.0, (a,b) -> a+b);
+	System.out.println(sum);
+	
+	// Summary of statistics
+	IntSummaryStatistics stats = IntStream.of(7,3,2,5,1,8,9)
+		.summaryStatistics();
+	System.out.println(stats);
 }
 
 // Print average of all students
