@@ -19,4 +19,17 @@ public void practice() {
 	.range(1,10)
 	.sum();
 	System.out.println(sum);
+	
+	// Find 1st element in sorted list
+	Stream.of("Washington","Area","Boston","Arizona","Newyork","Chicago")
+	.sorted()
+	.findFirst()
+	.ifPresent(System.out::print);
+	
+	// Apply filter
+	Stream.of("Washington","Area","Boston","Arizona","Newyork","Chicago")
+	.filter(x -> x.startsWith("A"))
+	.sorted(Collections.reverseOrder())
+	.findFirst()
+	.ifPresent(System.out::print);
 }
