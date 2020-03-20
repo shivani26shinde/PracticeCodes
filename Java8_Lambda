@@ -1,0 +1,16 @@
+public void practiceLambda(){
+    FileFilter fileFilter = new FileFilter(){
+      public boolean accept(File file){
+        return file.getName().endsWith(".java");
+      }
+    };
+		
+		FileFilter fileFilterLambda = (File file) -> file.getName().endsWith(".java");
+		
+		File dir = new File("d:/temp.java");
+		File[] files = dir.listFiles(fileFilter);
+		File[] filesLambda = dir.listFiles(fileFilterLambda);
+		
+		System.out.println(Arrays.toString(files));
+		System.out.println(Arrays.toString(filesLambda));
+}
