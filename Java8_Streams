@@ -94,6 +94,12 @@ public void practice() {
 	.stream()
 	.filter(x-> (x.startsWith("a") && x.length()==3))
 	.collect(Collectors.toList());
+	
+	// Add to odd/even numbers
+	list
+	.stream()
+	.map(x-> (x%2==0 ? "e"+x : "o"+x))
+	.collect(joining(","));
 }
 
 // Print average of all students
