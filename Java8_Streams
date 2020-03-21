@@ -88,6 +88,12 @@ public void practice() {
 	.stream()
 	.map(String::toUpperCase)
 	.collect(Collectors.toList());
+	
+	// Filter strings
+	list
+	.stream()
+	.filter(x-> (x.startsWith("a") && x.length()==3))
+	.collect(Collectors.toList());
 }
 
 // Print average of all students
