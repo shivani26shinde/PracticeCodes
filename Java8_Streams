@@ -100,6 +100,24 @@ public void practice() {
 	.stream()
 	.map(x-> (x%2==0 ? "e"+x : "o"+x))
 	.collect(joining(","));
+	
+	// Intermediate operations - Only declaration, no execution
+	Stream<String> s1 = Stream.of("one","two","three","two","four");
+	List<String> res = new ArrayList<>();
+	s1
+	.peek(System.out::println)
+	.filter(Predicate.isEqual("two"))
+	.peek(res::add);
+	System.out.println(res.size());
+	
+	// Intermediate & Terminal operations, execution driven by terminal operation
+	Stream<String> s1 = Stream.of("one","two","three","two","four");
+	List<String> res = new ArrayList<>();
+	s1
+	.peek(System.out::println)
+	.filter(Predicate.isEqual("two"))
+	.forEach(res::add);
+	System.out.println(res.size());
 }
 
 // Print average of all students
