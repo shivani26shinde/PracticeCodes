@@ -75,6 +75,14 @@ public void practice() {
 	IntSummaryStatistics stats = IntStream.of(7,3,2,5,1,8,9)
 		.summaryStatistics();
 	System.out.println(stats);
+	
+	// Average
+	list
+	.stream()
+	.mapToInt(x->x)
+	.average()
+	.getAsDouble();
+
 }
 
 // Print average of all students
