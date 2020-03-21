@@ -82,7 +82,12 @@ public void practice() {
 	.mapToInt(x->x)
 	.average()
 	.getAsDouble();
-
+	
+	// Uppercase
+	list
+	.stream()
+	.map(String::toUpperCase)
+	.collect(Collectors.toList());
 }
 
 // Print average of all students
