@@ -119,15 +119,23 @@ public void practice() {
 	.forEach(res::add);
 	System.out.println(res.size());
 	
-	// MAP - Input: Stream of Objects, Output: Stream of Objects
 	List<Integer> l1 = Arrays.asList(1,2,3,4,5,6,7);
 	List<Integer> l2 = Arrays.asList(2,4,6);
 	List<Integer> l3 = Arrays.asList(3,5,7);
 	List<List<Integer>> l = Arrays.asList(l1,l2,l3);
 	Function<List<?>, Integer> mapper = x->x.size();
+	Function<List<Integer>, Stream<Integer>> flatMapper = x->x.stream();
+	
+	// MAP - Input: List of Objects, Output: List of Objects
 	l
 	.stream()
 	.map(mapper)
+	.forEach(System.out::println);
+	
+	// FLATMAP - Input: List of Objects, Output: Single Stream of Objects
+	l
+	.stream()
+	.flatMap(flatMapper)
 	.forEach(System.out::println);
 }
 
