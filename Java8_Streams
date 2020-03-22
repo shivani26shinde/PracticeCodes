@@ -153,6 +153,23 @@ public void practice() {
 	.stream()
 	.allMatch(x->x.age>10);
 	System.out.println(ans);
+	
+	// Min with Optional object
+	List<String> l = Arrays.asList("A:54","B:43","M:34","C:56","N:66","D:77","E:22","F:22");
+	Optional<Person> op = l
+		.stream()
+		.map(x->{
+			String[] arr = x.split(":");
+			return new Person(arr[0].trim(),Integer.parseInt(arr[1]));
+		})
+		.filter(x->x.score>30)
+		.max(Comparator.comparing(x->x.score));
+
+	int min = op
+		.map(x->x.score)
+		.orElse(0);
+
+	System.out.println(min);
 }
 
 // Print average of all students
