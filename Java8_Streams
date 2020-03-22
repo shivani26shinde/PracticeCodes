@@ -194,3 +194,19 @@ class Average {
 		}
 	}
 }
+// Print max average of student using groupingBy
+public void printMaxAvg() {
+	List<Person> l = Arrays.asList(new Person("A",20),new Person("B",66),new Person("A",72),new Person("A",82),new Person("C",62),new Person("B",9),new Person("C",-62),new Person("C",33));
+	Optional<Double> max = l
+		.stream()
+		.collect(Collectors.groupingBy(
+			Person::getName,
+			Collectors.averagingInt(Person::getAge)
+		))
+		.entrySet()
+		.stream()
+		.map(Map.Entry::getValue)
+		.max(Comparator.naturalOrder());
+
+	System.out.println(max.get());
+}
