@@ -137,6 +137,22 @@ public void practice() {
 	.stream()
 	.flatMap(flatMapper)
 	.forEach(System.out::println);
+	
+
+	List<Person> l = Arrays.asList(new Person(20),new Person(16),new Person(72),new Person(33));	
+	// Filter and find Min
+	l
+	.stream()
+	.map(x->x.age)
+	.filter(x->x>20)
+	.min(Comparator.naturalOrder())
+	.ifPresent(System.out::println);
+		
+	// AllMatch
+	boolean ans = l
+	.stream()
+	.allMatch(x->x.age>10);
+	System.out.println(ans);
 }
 
 // Print average of all students
