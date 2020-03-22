@@ -1,0 +1,16 @@
+public void sort() {
+  List<String> l = Arrays.asList("A:54","B:43","A:34","C:56","Z:43","Y:22","B:66","D:77","A:22","C:22");
+  l
+  .stream()
+  .map(x->x.split(":"))
+  .collect(Collectors.groupingBy(
+    x->Integer.parseInt(x[1]),
+    Collectors.mapping(x->x[0], Collectors.toList())
+  ))
+  .entrySet()
+  .stream()
+  .sorted(Collections.reverseOrder(
+    Comparator.comparing(x->x.getValue().size())
+  ))
+  .forEach(System.out::println);
+}
