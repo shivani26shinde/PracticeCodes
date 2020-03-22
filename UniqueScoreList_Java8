@@ -1,0 +1,14 @@
+List<String> l = Arrays.asList("A:54","B:43","A:34","C:56","B:66","D:77","A:22","C:22");
+Map<Integer, List<String>> scoreMap = l
+  .stream()
+  .map(x->x.split(":"))
+  .collect(Collectors.groupingBy(
+    x->Integer.parseInt(x[1]),
+    Collectors.mapping(x->x[0], Collectors.toList())
+  ));
+
+scoreMap
+.entrySet()
+.stream()
+.map(Map.Entry::getValue)
+.forEach(System.out::println);
