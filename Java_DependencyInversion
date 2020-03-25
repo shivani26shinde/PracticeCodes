@@ -1,0 +1,32 @@
+// Adding interfaces to avoid complicating code
+
+class DependencyInversion{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Manager m = new Manager();
+		m.setEmployeeInterface(new Architect());
+		m.print();
+	}
+}
+class Manager{
+	private EmployeeInterface e;
+	public void setEmployeeInterface(EmployeeInterface e){
+		this.e=e;
+	}
+	public void print(){
+		this.e.print();
+	}
+}
+interface EmployeeInterface{
+	public void print();
+}
+class Developer implements EmployeeInterface{
+	public void print(){
+		System.out.println("Developer");
+	}	
+} 
+class Architect implements EmployeeInterface{
+	public void print(){
+		System.out.println("Architect");
+	}	
+} 
