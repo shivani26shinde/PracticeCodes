@@ -1,6 +1,7 @@
 public void practiceLambda(){
 
 	// Example 1
+	
 	FileFilter fileFilter = new FileFilter(){
 		public boolean accept(File filePath)
 			return filePath.getName().endsWith(".java");
@@ -16,6 +17,7 @@ public void practiceLambda(){
 	System.out.println(Arrays.toString(filesLambda));
 	
 	// Example 2
+	
 	List<String> l = Arrays.asList("abs", "urdhf", "she", "jidns","aa");
 	List<String> l2 = Arrays.asList("abs", "urdhf", "she", "jidns","aa");
 	Collections.sort(l, new Comparator<String>(){
