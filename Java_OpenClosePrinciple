@@ -1,0 +1,20 @@
+// Implementation must be extensible not modifiable
+
+abstract class Information{
+	public abstract void print();
+}
+class Docs extends Information{
+	public void print(){
+		System.out.println("Docs");
+	}
+}
+class Images extends Information{
+	public void print(){
+		System.out.println("Images");
+	}
+}
+class Videos extends Information{
+	public void print(){
+		System.out.println("Videos");
+	}
+}
