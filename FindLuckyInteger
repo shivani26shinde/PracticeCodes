@@ -1,0 +1,8 @@
+public int findLucky(int[] arr) {
+      HashMap<Integer,Integer> map = Arrays
+          .stream(arr)
+          .collect(Collectors.toMap({
+              x->x,
+              counting()
+          }));
+  }
