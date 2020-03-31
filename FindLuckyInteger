@@ -1,8 +1,14 @@
 public int findLucky(int[] arr) {
-      HashMap<Integer,Integer> map = Arrays
-          .stream(arr)
-          .collect(Collectors.toMap({
-              x->x,
-              counting()
-          }));
-  }
+      return Arrays
+            .stream(arr)
+            .boxed()
+            .collect(Collectors.toMap(
+                x -> x,
+                x -> 1,
+                (x,y) -> x+y))
+            .entrySet()
+            .stream()
+            .filter(x -> x.getKey() == x.getValue())
+            .map(Map.Entry::getKey)
+            .max(Comparator.naturalOrder()).orElse(-1);
+}
