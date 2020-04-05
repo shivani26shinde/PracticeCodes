@@ -1,0 +1,17 @@
+class Solution {
+    public int maxProfit(int[] prices) {
+        if(prices.length <= 1) return 0;
+        int currProfit=0, totalProfit=0, minIndex=0;
+        for(int i=1; i<prices.length; i++){
+            int profit = prices[i]-prices[minIndex];
+            if(profit<0 || profit<currProfit){
+                minIndex = i;
+                totalProfit += currProfit;
+                currProfit = 0;
+            } else{
+                currProfit = Math.max(profit, currProfit);
+            }
+        }
+        return currProfit == 0 ? totalProfit : (totalProfit + currProfit);
+    }
+}
