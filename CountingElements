@@ -1,0 +1,16 @@
+class Solution {
+    public int countElements(int[] arr) {
+        TreeMap<Integer, Integer> map = new TreeMap<>();
+        int sum = 0;
+        for(int i=0;i<arr.length;i++){
+            map.put(arr[i], map.getOrDefault(arr[i],0)+1);
+        }
+        int prev = map.firstKey();
+        for(Integer i: map.keySet()){
+            if(i == prev) continue;
+            if(i-prev == 1) sum += map.get(prev);
+            prev = i;
+        }
+        return sum;
+    }
+}
