@@ -1,0 +1,30 @@
+class Solution {
+    Stack<Character> st1 = new Stack<>();
+    Stack<Character> st2 = new Stack<>();
+    public boolean backspaceCompare(String S, String T) {
+        updateStack(S,st1);
+        updateStack(T,st2);
+        return isMatch();
+    }
+    public void updateStack(String s, Stack<Character> st){
+        for(int i=0;i<s.length();i++){
+            char c = s.charAt(i);
+            if(c == '#'){
+                if(st.isEmpty()) continue;
+                st.pop();
+            } else{
+                st.push(c);
+            }
+        }
+    }
+    public boolean isMatch(){
+        return getString(st1).equals(getString(st2));
+    }
+    public String getString(Stack<Character> st){
+        StringBuilder sb = new StringBuilder();
+        while(!st.isEmpty()){
+            sb.append(st.pop());
+        }
+        return sb.toString();
+    }
+}
