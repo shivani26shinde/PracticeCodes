@@ -1,0 +1,28 @@
+class Solution {
+    StringBuilder sb;
+    int n;
+    public String stringShift(String s, int[][] shift) {
+        sb = new StringBuilder(s);
+        n = s.length();
+        for(int i=0;i<shift.length;i++){
+            shiftString(shift[i]);
+        }
+        return sb.toString();
+    }
+    public void shiftString(int[] arr){
+        if(arr[0] == 0) leftShift(arr[1]);
+        else rightShift(arr[1]);
+    }
+    public void leftShift(int num){
+        StringBuilder str = new StringBuilder();
+        str.append(sb.substring(num));
+        str.append(sb.substring(0,num));
+        sb = str;
+    }
+    public void rightShift(int num){
+        StringBuilder str = new StringBuilder();
+        str.append(sb.substring(n-num));
+        str.append(sb.substring(0,n-num));
+        sb = str;
+    }
+}
