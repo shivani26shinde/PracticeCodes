@@ -1,0 +1,16 @@
+class Solution {
+    public boolean isValidSequence(TreeNode root, int[] arr) {
+        return isValid(root,arr,0);
+    }
+    public boolean isValid(TreeNode root, int[] arr, int start){
+        if(root==null || start==arr.length) return false;
+        if(root.left==null 
+            && root.right==null 
+            && start==arr.length-1
+            && root.val==arr[start]) return true;
+        
+        return (root.val==arr[start]) 
+            && (isValid(root.left,arr,start+1) 
+                || isValid(root.right,arr,start+1));
+    }
+}
