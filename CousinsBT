@@ -1,0 +1,22 @@
+class Solution {
+    TreeNode p1;
+    TreeNode p2;
+    int d1=0,d2=0;
+    public boolean isCousins(TreeNode root, int x, int y) {
+        traverse(root,null,0,x,y);
+        if(d1==0 || d1!=d2 || p1==p2) return false;
+        return true;
+    }
+    public void traverse(TreeNode root,TreeNode parent, int num, int x, int y){
+        if(root==null) return;
+        if(root.val==x){
+            d1=num;
+            p1=parent;
+        } else if(root.val==y){
+            d2=num;
+            p2=parent;
+        }
+        traverse(root.left,root,num+1,x,y);
+        traverse(root.right,root,num+1,x,y);
+    }
+}
