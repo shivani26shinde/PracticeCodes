@@ -1,0 +1,15 @@
+class Solution {
+    public boolean checkStraightLine(int[][] coordinates) {
+        int n=coordinates.length;
+        float slope = getSlope(coordinates[1], coordinates[0]);
+        for(int i=1;i<n;i++){
+            float currSlope = getSlope(coordinates[i], coordinates[i-1]);
+            if(currSlope != slope) return false;
+        }
+        return true;
+    }
+    public float getSlope(int[] p1, int[] p2){
+        if(p1[0]-p2[0]==0) return 0;
+        return ((float)p1[1]-p2[1]) / (p1[0]-p2[0]);
+    }
+}
