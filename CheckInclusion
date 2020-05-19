@@ -1,0 +1,35 @@
+class Solution {
+    public boolean checkInclusion(String s1, String s2) {
+        Map<Character,Integer> sMap = s1
+            .chars()
+            .mapToObj(x -> (char) x)
+            .collect(Collectors.toMap(
+                x->x,
+                x->1,
+                Integer::sum
+            ));
+        
+        int count=sMap.size();
+        int i=0,j=0,num=0;
+        
+        while(i<s2.length()){
+            char ch = s2.charAt(i);
+            if(sMap.containsKey(ch)){
+                sMap.put(ch, sMap.get(ch)-1);
+                if(sMap.get(ch)==0) num++;
+                if(count==num) return true;
+            }            
+            if(i>=s1.length()-1){
+                char c = s2.charAt(j);
+                if(sMap.containsKey(c)){
+                    sMap.put(c, sMap.get(c)+1);
+                    if(sMap.get(c)==1) num--;
+                }
+                j++;
+            }
+            i++;
+        }
+        
+        return false;
+    }
+}
